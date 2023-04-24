@@ -1,0 +1,33 @@
+-Create Table Clothing Database
+
+Create Table store (id Integer Primary Key,item text,quantity integer,price Integer,Aisle integer);
+Insert into Clothing Values(1,"Tanktops",5,32.99,1);
+Insert into Clothing Values(2,"Longsleeves",50,30.99,1);
+Insert into Clothing Values(3,"Bikini",45,31.99,2);
+Insert into Clothing Values(4,"Shortsleeves",34,25.67,1);
+Insert into Clothing Values(5,"Shorts",35,30.00,3);
+Insert into Clothing Values(6,"Capris",90,29.00,3);
+Insert into Clothing Values(7,"CargoPants",84,30.32,4);
+Insert into Clothing Values(8,"Pants",43,57.00,4);
+Insert into Clothing Values(9,"DenimPants",46,59.00,4);
+Insert into Clothing Values(10,"Onepiece",5,19.00,2);
+Insert into Clothing Values(11,"Socks",53,11.99,5);
+Insert into Clothing Values(12,"Skirts",59,19.99,3);
+Insert into Clothing Values(13,"Sneakers",11,123.89,6);
+Insert into Clothing Values(14,"Highheels",15,30.99,6);
+Insert into Clothing Values(15,"Sandals",29,19.98,6);
+
+--display the database ordered by price.
+SELECT * FROM store
+ORDER BY price desc;
+
+--what is the avg price of items in the bulk section?
+SELECT AVG(price) "avg bulk item price"
+FROM store
+where section='bulk;
+
+--what aisle has the most items?
+SELECT item,price,aisle
+FROM store
+order by aisle desc
+limit 5;
